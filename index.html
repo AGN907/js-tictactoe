@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Tic Tac Toe</h1>
+        <div class="score">
+            <script id="scoreTemplate" type="text/template">
+                <div class="turn">
+                    {{#if currentPlayer.isWinner}}
+                    <p>{{currentPlayer.name}} is the winner!</p>
+                    <button class="reset">Reset</button>
+                    {{else}}
+                    <p>{{currentPlayer.name}} turn, <span>make your move.</span></p>
+                {{/if}}
+                
+                </div>
+            </script>
+            
+        </div>
+        <div class="board">
+            <script id="boardTemplate" type="text/template">
+                {{#board}}
+                <button data-square="{{getIndex}}" >{{getValue}}</button>
+                {{/board}}
+            </script>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js" integrity="sha512-E1dSFxg+wsfJ4HKjutk/WaCzK7S2wv1POn1RRPGh8ZK+ag9l244Vqxji3r6wgz9YBf6+vhQEYJZpSjqWFPg9gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+</body>
+</html>
